@@ -1,22 +1,22 @@
-<form (ngSubmit)="insertData()">
+<form>
   <div class="form-group">
     <label for="type">Type</label>
-    <input type="text" name="type" class="form-control"[(ngModel)]="municipalite.typeContenu">
+    <input type="text" name="type" class="form-control"[(ngModel)]="municipalites.typeContenu">
   </div>
 
   <div class="form-group">
     <label for="description">Description</label>
-    <input type="text" name="description" class="form-control"[(ngModel)]="municipalite.description">
+    <input type="text" name="description" class="form-control"[(ngModel)]="municipalites.description">
   </div>
 
   <div class="form-group">
     <label for="dateAjout">Date-ajout</label>
-    <input type="date" name="dateAjout" class="form-control"[(ngModel)]="municipalite.dateAjout">
+    <input type="date" name="dateAjout" class="form-control"[(ngModel)]="municipalites.dateAjout">
   </div>
 
   <div class="form-group">
     <label for="url">Url</label>
-    <input type="text" name="url" class="form-control"[(ngModel)]="municipalite.urlContenu">
+    <input type="text" name="url" class="form-control"[(ngModel)]="municipalites.urlContenu">
   </div>
 
   <button class="btn btn-success btn-sm mt-4">Ajouter</button>
