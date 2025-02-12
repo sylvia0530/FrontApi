@@ -12,35 +12,18 @@ import { Municipalite } from '../../municipalite';
   styleUrl: './municipalites.component.css'
 })
 export class MunicipalitesComponent implements OnInit {
-  municipalites: Municipalite[] = [];
-  municipalite: Municipalite = {
-    id: '',
-    typeContenu: '',
-    description: '',
-    dateAjout: '',
-    urlContenu: ''
-  };
+ municipalites:any;
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.loadMunicipalites();
+    this.getMunicipaliteData();
   }
 
-  loadMunicipalites() {
-    this.dataService.getData('municipalites').subscribe(data => {
-      this.municipalites = data;
+  getMunicipaliteData() {
+    console.log('liste');
+    this.dataService.getData().subscribe(res => {
+      this.municipalites = res;
     });
   }
 
-  addMunicipalite() {
-    this.dataService.insertData('municipalites', this.addMunicipalite).subscribe(res => {
-      this.loadMunicipalites(); // Recharger la liste après ajout
-    });
-  }
-
-  updateMunicipalite(municipalite: Municipalite) {
-    this.dataService.updateData('municipalites', municipalite.id, municipalite).subscribe(() => {
-      this.loadMunicipalites(); // Recharger la liste après mise à jour
-    });
-  }
 }
