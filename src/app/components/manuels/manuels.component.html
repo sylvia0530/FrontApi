@@ -1,4 +1,4 @@
-<!-- <form (ngSubmit)="">
+<form (ngSubmit)="insertManuel()">
   <div class="form-group">
     <label for="titre">Titre</label>
     <input type="text" name="titre" class="form-control"[(ngModel)]="manuel.titre">
@@ -34,9 +34,9 @@
       <td>{{man.description}}</td>
       <td>{{man.urlManuel}}</td>
       <td>
-        <a class="btn btn-warning btn-sm mx-4" href="/edit/{{man.id}}">Modifier</a>
+
       </td>
     </tr>
   </tbody>
 </table>
- -->
+
