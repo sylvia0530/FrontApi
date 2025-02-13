@@ -9,6 +9,7 @@ export class DataService {
 
   private apiUrl = 'http://127.0.0.1:8000/api';
 
+  // Municipalite
   getData(): Observable<any> {
     return this.httpClient.get<any>(`${this.apiUrl}/municipalites`);
   }
@@ -17,11 +18,21 @@ export class DataService {
     return this.httpClient.post<any>(`${this.apiUrl}/addmunicipalites`, data);
   }
 
+  // Manuel
   getManuel(): Observable<any> {
     return this.httpClient.get<any>(`${this.apiUrl}/manuels`);
   }
 
   insertManuel(data: any): Observable<any> {
     return this.httpClient.post<any>(`${this.apiUrl}/addmanuels`, data);
+  }
+
+  // Evenements
+  getEvenement(): Observable<any> {
+    return this.httpClient.get<any>(`${this.apiUrl}/evenements`);
+  }
+
+  insertEvenement(data: any): Observable<any> {
+    return this.httpClient.post<any>(`${this.apiUrl}/addevenements`, data);
   }
 }
