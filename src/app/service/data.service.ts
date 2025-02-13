@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Municipalite } from '../municipalite';
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
   constructor(private httpClient: HttpClient) { }
-  getData(){
-    return this.httpClient.get('http://127.0.0.1:8000/api');
+
+  private apiUrl = 'http://127.0.0.1:8000/api';
+
+  // Méthode pour récupérer les données
+  getData(): Observable<any> {
+    return this.httpClient.get<any>(`${this.apiUrl}/municipalites`);
   }
-   // Fonction générique pour récupérer les données d'une table
 
-  // Fonction générique pour insérer des données dans une table
+  // Méthode pour insérer les données
+  insertData(data: any): Observable<any> {
+    return this.httpClient.post<any>(`${this.apiUrl}/addmunicipalites`, data);
+  }
 
-
-  // Fonction générique pour récupérer un élément par ID
-
-
-  // Fonction générique pour mettre à jour un élément d'une table
-  
-
+  getManuel(): Observable<any> {
+    return this.httpClient.get<any>(`${this.apiUrl}/manuels`);
+  }
 }
