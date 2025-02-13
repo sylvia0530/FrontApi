@@ -13,6 +13,7 @@ import { Municipalite } from '../../municipalite';
 })
 export class MunicipalitesComponent implements OnInit {
  municipalites:any;
+ municipalite = new Municipalite;
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
@@ -26,4 +27,9 @@ export class MunicipalitesComponent implements OnInit {
     });
   }
 
+  insertData(){
+    this.dataService.insertData(this.municipalite).subscribe(res =>{
+      this.getMunicipaliteData();
+    });
+  }
 }
