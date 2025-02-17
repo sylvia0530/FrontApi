@@ -44,4 +44,13 @@ export class DataService {
   insertGallerie(data: any): Observable<any> {
     return this.httpClient.post<any>(`${this.apiUrl}/addgalleries`, data);
   }
+
+// Contacts
+  getContact(): Observable<any> {
+  return this.httpClient.get<any>(`${this.apiUrl}/contacts`);
+}
+
+  insertContact(data: any): Observable<any> {
+  return this.httpClient.post<any>(`${this.apiUrl}/addcontacts`, data);
+}
 }
