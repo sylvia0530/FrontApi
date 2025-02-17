@@ -26,7 +26,7 @@ export class EvenementsComponent implements OnInit{
   }
 
   insertEvenement(){
-    this.dataService.insertManuel(this.evenement).subscribe(res =>{
+    this.dataService.insertEvenement(this.evenement).subscribe(res =>{
       this.getEvenementData();
     });
   }
