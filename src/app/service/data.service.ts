@@ -35,4 +35,13 @@ export class DataService {
   insertEvenement(data: any): Observable<any> {
     return this.httpClient.post<any>(`${this.apiUrl}/addevenements`, data);
   }
+
+  // Gallerie
+  getGallerie(): Observable<any> {
+    return this.httpClient.get<any>(`${this.apiUrl}/galleries`);
+  }
+
+  insertGallerie(data: any): Observable<any> {
+    return this.httpClient.post<any>(`${this.apiUrl}/addgalleries`, data);
+  }
 }
