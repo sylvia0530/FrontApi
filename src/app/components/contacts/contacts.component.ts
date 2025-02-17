@@ -2,7 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { DataService } from '../../service/data.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-
+import { Contact } from '../../contact';
 @Component({
   selector: 'app-contacts',
   imports: [CommonModule,FormsModule,ReactiveFormsModule],
